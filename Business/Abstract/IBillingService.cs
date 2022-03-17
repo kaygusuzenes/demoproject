@@ -5,7 +5,7 @@ namespace Business.Abstract
 {
     public interface IBillingService
     {
-        IResult Add(Billing billing);
+        IDataResult<Billing> Add(Billing billing);
     }
 
 }

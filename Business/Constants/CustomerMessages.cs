@@ -12,5 +12,6 @@ namespace Business.Constants
         public static string CustomersListed = "Müşteriler başarıyla listelendi.";
         public static string CustomerAddressAdded = "Müşteri adresi başarıyla eklendi.";
         public static string CustomerAddressesListed = "Müşteri adresleri başarıyla listelendi";
+        public static string CustomerAlreadyAdded="Email adresi ile kayıtlı müşteri zaten var.";
     }
 }

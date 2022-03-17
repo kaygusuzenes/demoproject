@@ -12,5 +12,6 @@ namespace Business.Abstract
     {
         IResult Add(Product product);
         IDataResult<List<Product>> GetAll();
+        IResult StokReduction(int productId, int quantity);
     }
 }

@@ -1,4 +1,5 @@
-﻿using CRM.Core.DataAccess;
+﻿using Core.Utilities.Results.Abstract;
+using CRM.Core.DataAccess;
 using Entity.Concrete;
 using System;
 using System.Collections.Generic;

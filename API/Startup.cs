@@ -1,3 +1,4 @@
+using Core.CrossCuttingConcerns.Logging.Serilog.Loggers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -27,6 +28,8 @@ namespace API
         {
             services.AddControllers();
             services.AddSwaggerGen();
+            //
+            services.AddTransient<FileLogger>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,8 +39,8 @@ namespace API
             {
                 app.UseDeveloperExceptionPage();
             }
-                app.UseSwagger();
-                app.UseSwaggerUI();
+            app.UseSwagger();
+            app.UseSwaggerUI();
 
             app.UseHttpsRedirection();
 

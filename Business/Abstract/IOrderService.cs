@@ -1,5 +1,6 @@
 ﻿using Core.Utilities.Results.Abstract;
 using Entity.Concrete;
+using Entity.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,6 @@ namespace Business.Abstract
 {
     public  interface IOrderService
     {
-        IResult Add(Order order);
+        IResult Add(OrderAddDto orderAddDto);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entity.Concrete;
+using Entity.DTOs;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -17,9 +18,9 @@ namespace API.Controllers
         }
 
         [HttpPost("addorder")]
-        public IActionResult AddOrder(Order order)
+        public IActionResult AddOrder(OrderAddDto orderAddDto)
         {
-            var result=_orderService.Add(order);
+            var result=_orderService.Add(orderAddDto);
             return result.Success?Ok(result.Message):BadRequest(result.Message);
         }
 

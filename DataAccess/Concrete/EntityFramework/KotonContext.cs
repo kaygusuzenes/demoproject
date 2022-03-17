@@ -19,13 +19,17 @@ namespace DataAccess.Concrete.EntityFramework
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Customer>().Property(x => x.CustomerId).HasDefaultValue(new Guid().ToString());
+            modelBuilder.Entity<CustomerAddress>().Property(x => x.CustomerAddressId).HasDefaultValue(new Guid().ToString());
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
         }
 
         //
         public DbSet<Product> Products { get; set; }
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<CustomerAddress> CustomerAddresses { get; set; }
         public DbSet<Billing> Billings { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
 
     }
