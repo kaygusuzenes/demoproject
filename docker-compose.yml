@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  kotondb:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+  rabbitmq:
+    image: rabbitmq:3-management
+  api:
+    image: api
+    build:
+        context: .
+        dockerfile: API/Dockerfile
+

@@ -1,0 +1,29 @@
+version: "3.8"
+services:
+  kotondb:
+    container_name: kotondb
+    restart: always
+    ports:
+      - "1433:1433"
+    volumes:
+      - kotondb
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=1453*1453
+  rabbitmq:
+    container_name: rabbitmq
+    restart: always
+    environment:
+     RABBITMQ_DEFAULT_USER: admin
+     RABBITMQ_DEFAULT_PASS: 123456
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  api:
+    container_name: api
+    restart: always
+    ports:
+      - "5001:443"
+      - "5000:80"
+
+ 
